@@ -51,3 +51,34 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
+/* ─── Mobile performance ─────────────────────────────────────────────────── */
+
+/* Skip off-screen rendering for below-fold sections */
+section:not(#home) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Disable expensive hover effects on touch devices */
+@media (hover: none) {
+  .glow-box:hover {
+    transform: none;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+  }
+}
+
+/* Kill all animations & transitions for users who prefer reduced motion.
+   Framer Motion respects this via the motion-safe: Tailwind prefix we added,
+   but CSS animations also need to be covered here. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -11,9 +11,11 @@ export default function Hero({ t }: HeroProps) {
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-blue/20 rounded-full blur-[120px] opacity-60 mix-blend-screen animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-electric-blue/10 rounded-full blur-[150px] opacity-40 mix-blend-screen"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?auto=format&fit=crop&q=80&w=1920&h=1080&blur=10')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        {/* Glow orbs: smaller on mobile to save GPU */}
+        <div className="absolute top-1/4 left-1/4 w-75 h-75 sm:w-150 sm:h-150 bg-electric-blue/20 rounded-full blur-[60px] sm:blur-[120px] opacity-60 mix-blend-screen motion-safe:animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 hidden sm:block w-200 h-200 bg-electric-blue/10 rounded-full blur-[150px] opacity-40 mix-blend-screen"></div>
+        {/* Background image hidden on mobile – saves a network request & compositing cost */}
+        <div className="absolute inset-0 hidden sm:block bg-[url('https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?auto=format&fit=crop&q=40&w=1280&h=720&blur=10')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/60 to-black"></div>
       </div>
 
@@ -63,7 +65,7 @@ export default function Hero({ t }: HeroProps) {
         >
           <div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center">
             {/* Background Glowing Portal Effect */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-electric-blue/20 to-purple-500/10 blur-[80px] animate-pulse"></div>
+            <div className="absolute inset-4 rounded-full bg-linear-to-tr from-electric-blue/20 to-purple-500/10 blur-[80px] motion-safe:animate-pulse"></div>
 
             {/* Decorative circles - strictly behind the robot */}
             <div className="absolute inset-0 border border-electric-blue/20 rounded-full animate-[spin_20s_linear_infinite]"></div>

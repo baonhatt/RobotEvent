@@ -25,8 +25,8 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
 
   return (
     <section id="robots" className="py-24 bg-card-bg relative overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/seed/circuit/1920/1080?blur=10')] opacity-5 mix-blend-overlay pointer-events-none"></div>
+      {/* Decorative Background – hidden on mobile to skip 1920px image fetch */}
+      <div className="absolute top-0 left-0 w-full h-full hidden sm:block bg-[url('https://picsum.photos/seed/circuit/1280/720?blur=10')] opacity-5 mix-blend-overlay pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -46,11 +46,11 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="group relative bg-[#1c1c1e] rounded-[32px] overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[340px]"
+                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-85"
               >
                 {/* Image Container */}
                 <div className="relative h-80 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent z-10"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-transparent to-transparent z-10"></div>
                   <img
                     src={robotImages[index]}
                     alt={robot.name}
@@ -67,7 +67,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 relative z-20 -mt-10 bg-linear-to-t from-[#0a192f] via-[#0a192f] to-transparent pt-12">
+                <div className="p-8 relative z-20 -mt-10 bg-linear-to-t from-deep-blue via-deep-blue to-transparent pt-12">
                   <div className="flex items-baseline justify-between mb-3">
                     <h3 className="text-2xl font-display font-semibold text-white tracking-tight group-hover:text-electric-blue transition-colors">
                       {robot.name}
