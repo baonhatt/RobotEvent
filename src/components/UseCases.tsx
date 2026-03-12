@@ -67,6 +67,9 @@ export default function UseCases({ t }: UseCasesProps) {
               <img
                 src={unitreeG1}
                 alt="Unitree G1 Robot"
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent pointer-events-none"></div>

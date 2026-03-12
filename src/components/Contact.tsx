@@ -7,23 +7,41 @@ interface ContactProps {
 }
 
 export default function Contact({ t }: ContactProps) {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: '', email: '', message: '' });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSuccess(false), 5000);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message.');
+      }
+
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', message: '', phone: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to send message.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -137,6 +155,21 @@ export default function Contact({ t }: ContactProps) {
                     </div>
                     
                     <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
+                        {t.form.phone}
+                      </label>
+                      <input
+                        required
+                        type="tel"
+                        id="phone"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        placeholder={t.placeholders.phone}
+                      />
+                    </div>
+                    
+                    <div>
                       <label htmlFor="email" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
                         {t.form.email}
                       </label>
@@ -161,7 +194,7 @@ export default function Contact({ t }: ContactProps) {
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-none"
+                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-y"
                         placeholder={t.placeholders.message}
                       ></textarea>
                     </div>
@@ -172,10 +205,16 @@ export default function Contact({ t }: ContactProps) {
                       className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <span className="relative z-10 text-[15px]">
-                        {isSubmitting ? '...' : t.form.submit}
+                        {isSubmitting ? (t.form.sending || 'Sending...') : t.form.submit}
                       </span>
                       {!isSubmitting && <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
                     </button>
+
+                    {submitError && (
+                      <p className="text-red-400 text-sm font-medium" role="alert">
+                        {submitError}
+                      </p>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>

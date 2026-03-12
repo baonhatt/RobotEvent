@@ -54,6 +54,9 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                   <img
                     src={robotImages[index]}
                     alt={robot.name}
+                    loading="lazy"
+                    fetchPriority="low"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
 

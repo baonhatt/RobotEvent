@@ -50,7 +50,7 @@ export default function Hero({ t }: HeroProps) {
               href="#contact"
               className="inline-flex items-center justify-center px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-full hover:bg-white/10 transition-colors backdrop-blur-md"
             >
-              Contact Us
+              {t.contactUs}
             </a>
           </div>
         </motion.div>
@@ -86,6 +86,9 @@ export default function Hero({ t }: HeroProps) {
               <img
                 src={heroImg}
                 alt="Futuristic Humanoid Robot"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
               />
             </motion.div>

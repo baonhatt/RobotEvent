@@ -10,6 +10,7 @@ export const translations = {
       tagline: "Rent Robots to Make Your Events Unforgettable",
       description: "Experience the future today. Our advanced humanoid and interactive robots are ready to elevate your exhibitions, product launches, and entertainment shows.",
       cta: "Explore Robots",
+      contactUs: "Contact Us"
     },
     capabilities: {
       title: "Robot Capabilities",
@@ -65,7 +66,9 @@ export const translations = {
         name: "Your Name",
         email: "Your Email",
         message: "Message",
+        phone: "Your Phone Number",
         submit: "Send Message",
+        sending: "Sending...",
         success: "Message sent! We'll get back to you soon."
       },
       info: {
@@ -78,6 +81,7 @@ export const translations = {
       placeholders: {
         name: "John Doe",
         email: "john@example.com",
+        phone: "Your phone",
         message: "Tell us about your event..."
       }
     },
@@ -98,7 +102,8 @@ export const translations = {
     hero: {
       tagline: "Thuê Robot Để Sự Kiện Của Bạn Trở Nên Khó Quên",
       description: "Trải nghiệm tương lai ngay hôm nay. Các robot hình người và tương tác tiên tiến của chúng tôi sẵn sàng nâng tầm các buổi triển lãm, ra mắt sản phẩm và chương trình giải trí của bạn.",
-      cta: "Khám Phá Robot",
+      cta: "Khám Phá Robot", 
+      contactUs: "Liên hệ ngay"
     },
     capabilities: {
       title: "Khả Năng Của Robot",
@@ -153,8 +158,10 @@ export const translations = {
       form: {
         name: "Tên Của Bạn",
         email: "Email Của Bạn",
+        phone: "Số điện thoại",
         message: "Tin Nhắn",
         submit: "Gửi Tin Nhắn",
+        sending: "Đang gửi...",
         success: "Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất."
       },
       info: {
@@ -167,7 +174,8 @@ export const translations = {
       placeholders: {
         name: "Nguyễn Văn A",
         email: "nguyenvana@gmail.com",
-        message: "Hãy chia sẻ về sự kiện của bạn..."
+        phone: "số điện thoại",
+        message: "Hãy chia sẻ cho chúng tôi về sự kiện của bạn..."
       }
     },
     footer: {
