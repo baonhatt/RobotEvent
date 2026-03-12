@@ -1,6 +1,9 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import express from 'express';
 import { Resend } from 'resend';
+
+dotenv.config();
+dotenv.config({ path: '.env.local', override: true });
 
 const app = express();
 const port = Number(process.env.PORT || 3001);
@@ -48,9 +51,15 @@ app.post('/api/contact', async (req, res) => {
   const toEmail = process.env.CONTACT_TO_EMAIL;
   const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
-  if (!resendApiKey || !toEmail || !fromEmail) {
+  const missingEnv = [
+    !resendApiKey ? 'RESEND_API_KEY' : null,
+    !toEmail ? 'CONTACT_TO_EMAIL' : null,
+    !fromEmail ? 'CONTACT_FROM_EMAIL' : null,
+  ].filter((value): value is string => Boolean(value));
+
+  if (missingEnv.length > 0) {
     return res.status(500).json({
-      error: 'Server is not configured. Set RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL.',
+      error: `Server is not configured. Missing: ${missingEnv.join(', ')}.`,
     });
   }
 

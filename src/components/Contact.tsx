@@ -12,13 +12,16 @@ export default function Contact({ t }: ContactProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
+  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/$/, '');
+  const contactApiUrl = apiBaseUrl ? `${apiBaseUrl}/api/contact` : '/api/contact';
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(contactApiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

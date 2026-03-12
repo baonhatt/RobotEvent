@@ -50,8 +50,11 @@ export default function UseCases({ t }: UseCasesProps) {
               ))}
             </div>
 
-            <button className="mt-12 px-8 py-4 bg-white text-black font-semibold rounded-full hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300">
+            <button  className="mt-12 px-8 py-4 bg-white text-black font-semibold rounded-full hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300">
+              <a href="#contact">
               {t.cta}
+
+              </a>
             </button>
           </motion.div>
 
