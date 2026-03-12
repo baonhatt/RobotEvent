@@ -99,7 +99,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
 
                   {/* Action Button */}
                   <button
-                    onClick={() => handleViewSpecs(robot)}
+                    onClick={(e) => { e.stopPropagation(); handleViewSpecs(robot); }}
                     className="mt-8 w-full py-3.5 bg-electric-blue/10 border border-electric-blue/30 rounded-full text-sm font-semibold text-white hover:bg-electric-blue hover:text-dark-bg transition-all duration-300 backdrop-blur-sm group/btn flex items-center justify-center gap-2"
                   >
                     {t.viewSpecs}
@@ -115,12 +115,14 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
       {/* Contact Popup Modal */}
       <AnimatePresence>
         {isPopupOpen && (
-          <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
+          <div
+            className="fixed inset-0 z-100 flex items-center justify-center p-4"
+            onPointerDown={() => setIsPopupOpen(false)}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsPopupOpen(false)}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             />
 
@@ -128,6 +130,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              onPointerDown={(e) => e.stopPropagation()}
               className="relative w-full max-w-lg bg-dark-bg border border-white/10 rounded-[40px] shadow-[0_0_50px_rgba(0,240,255,0.1)] overflow-hidden"
             >
               {/* Decorative elements */}
