@@ -13,7 +13,7 @@ export default function Contact({ t }: ContactProps) {
   const [submitError, setSubmitError] = useState('');
 
   const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/$/, '');
-  const apiPath = (import.meta.env.VITE_CONTACT_API_PATH || '/contact').trim();
+  const apiPath = (import.meta.env.VITE_CONTACT_API_PATH || '/api/contact').trim();
   const normalizedApiPath = apiPath.startsWith('/') ? apiPath : `/${apiPath}`;
   const contactApiUrl = `${apiBaseUrl}${normalizedApiPath}`;
 
