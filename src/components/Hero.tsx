@@ -64,19 +64,19 @@ export default function Hero({ t }: HeroProps) {
           <div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center">
             {/* Background Glowing Portal Effect */}
             <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-electric-blue/20 to-purple-500/10 blur-[80px] animate-pulse"></div>
-            
+
             {/* Decorative circles - strictly behind the robot */}
             <div className="absolute inset-0 border border-electric-blue/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
             <div className="absolute inset-12 border border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
             <div className="absolute inset-24 border border-electric-blue/30 rounded-full"></div>
-            
+
             {/* Floating Robot Image - Pops Out */}
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -20, 0],
                 rotate: [0, 1, 0, -1, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 6,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -89,7 +89,7 @@ export default function Hero({ t }: HeroProps) {
                 className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
               />
             </motion.div>
-            
+
             {/* Shadow beneath the robot for depth */}
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-48 h-8 bg-black/40 blur-xl rounded-[100%] z-20"></div>
           </div>

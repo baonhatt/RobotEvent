@@ -30,15 +30,14 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${
-        isScrolled ? 'bg-black/60 backdrop-blur-2xl border-b border-white/10 py-3' : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${isScrolled ? 'bg-black/60 backdrop-blur-2xl border-b border-white/10 py-3' : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2 group">
           <Bot className="w-8 h-8 text-electric-blue group-hover:animate-pulse" />
           <span className="text-2xl font-display font-bold tracking-wider text-white">
-            ROBO<span className="text-electric-blue glow-text">RENT</span>
+            ROBOT<span className="text-electric-blue glow-text">EVENT</span>
           </span>
         </a>
 
@@ -53,21 +52,19 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
               {link.name}
             </a>
           ))}
-          
+
           <div className="flex items-center bg-white/5 backdrop-blur-lg rounded-full p-1 border border-white/10">
             <button
               onClick={() => setLang('EN')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${
-                lang === 'EN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${lang === 'EN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
+                }`}
             >
               EN
             </button>
             <button
               onClick={() => setLang('VN')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${
-                lang === 'VN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${lang === 'VN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
+                }`}
             >
               VN
             </button>
@@ -105,17 +102,15 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
             <div className="flex items-center gap-2 pt-4 border-t border-gray-800">
               <button
                 onClick={() => { setLang('EN'); setMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${
-                  lang === 'EN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
-                }`}
+                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${lang === 'EN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
+                  }`}
               >
                 ENGLISH
               </button>
               <button
                 onClick={() => { setLang('VN'); setMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${
-                  lang === 'VN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
-                }`}
+                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${lang === 'VN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
+                  }`}
               >
                 TIẾNG VIỆT
               </button>

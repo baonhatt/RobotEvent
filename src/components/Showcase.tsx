@@ -138,12 +138,12 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
 
                 <div className="mb-10">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-blue/10 border border-electric-blue/20 text-electric-blue text-xs font-bold mb-4">
-                    Rental Inquiry
+                    {t.modal.inquiry}
                   </div>
                   <h3 className="text-3xl font-display font-semibold text-white mb-2 leading-tight">
-                    Interested in {selectedRobot?.name}?
+                    {t.modal.interest} {selectedRobot?.name}?
                   </h3>
-                  <p className="text-gray-400">Contact our rental department for availability and custom packages.</p>
+                  <p className="text-gray-400">{t.modal.description}</p>
                 </div>
 
                 <div className="space-y-6">
@@ -152,7 +152,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                       <Phone className="w-6 h-6 text-electric-blue" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">Call Us</p>
+                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.call}</p>
                       <p className="text-xl font-semibold text-white">{contactT.info.phone}</p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                       <Mail className="w-6 h-6 text-electric-blue" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">Email</p>
+                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.email}</p>
                       <p className="text-xl font-semibold text-white">{contactT.info.email}</p>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                       <MapPin className="w-6 h-6 text-electric-blue" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">Visit Us</p>
+                      <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.visit}</p>
                       <p className="text-lg font-semibold text-white leading-tight">{contactT.info.address}</p>
                     </div>
                   </div>
@@ -183,9 +183,9 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                     href={`tel:${contactT.info.phone.replace(/\s+/g, '')}`}
                     className="w-full py-4 bg-electric-blue text-dark-bg font-bold rounded-2xl transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-2"
                   >
-                    Contact Now
+                    {t.modal.button}
                   </a>
-                  <p className="text-center text-xs text-gray-600">Available Mon-Fri, 9am - 6pm</p>
+                  <p className="text-center text-xs text-gray-600">{t.modal.availability}</p>
                 </div>
               </div>
             </motion.div>

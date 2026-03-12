@@ -13,9 +13,11 @@ import UseCases from './components/UseCases';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import PhoneButton from './components/PhoneButton';
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('EN');
+  const [lang, setLang] = useState<Language>('VN');
   const t = translations[lang];
 
   return (
@@ -30,6 +32,8 @@ export default function App() {
         <Contact t={t.contact} />
       </main>
       <Footer t={t.footer} nav={t.nav} />
+      <ScrollToTop />
+      <PhoneButton phone={t.contact.info.phone} />
     </div>
   );
 }

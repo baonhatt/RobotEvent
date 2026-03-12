@@ -26,10 +26,23 @@ export const translations = {
       robots: [
         { name: "Aura-X", desc: "Premium humanoid for VIP hosting and presentations.", price: "35,000,000 VND", duration: "8 hours", abilities: ["Multilingual", "Facial Recognition", "Speech Synthesis"] },
         { name: "CyberDog", desc: "High-tech quadruped robot for dynamic demonstrations.", price: "5,000,000 VND", duration: "8 hours", abilities: ["Agility", "Object Tracking", "Stunts"] }
-      ]
+      ],
+      modal: {
+        inquiry: "Rental Inquiry",
+        interest: "Interested in",
+        description: "Contact our rental department for availability and custom packages.",
+        call: "Call Us",
+        email: "Email",
+        visit: "Visit Us",
+        button: "Contact Now",
+        availability: "Available Mon-Fri, 9am - 6pm"
+      }
     },
     useCases: {
       title: "Perfect For Any Event",
+      subtitle: "Versatile Applications",
+      cta: "Discuss Your Event",
+      statLabel: "Engagement Rate",
       items: [
         "Exhibitions & Trade Shows",
         "Product Launches",
@@ -39,26 +52,40 @@ export const translations = {
       ]
     },
     about: {
-      title: "About RoboRent",
+      title: "About RobotEvent",
       mission: "Our mission is to bridge the gap between humans and advanced robotics. We provide seamless access to cutting-edge entertainment technology, ensuring your events are not just seen, but remembered.",
       focus: "Focused on innovation, reliability, and unforgettable experiences."
     },
     contact: {
       title: "Get In Touch",
+      connect: "Connect With Us",
+      tagline: "Ready to rent the future?",
+      description: "Reach out to our team to discuss your event requirements, get a quote, or schedule a demo of our robotic fleet.",
       form: {
         name: "Your Name",
         email: "Your Email",
         message: "Message",
-        submit: "Send Message"
+        submit: "Send Message",
+        success: "Message sent! We'll get back to you soon."
       },
       info: {
-        email: "hello@roborent.tech",
+        email: "hello@robotevent.tech",
         phone: "+1 (555) 123-4567",
-        address: "123 Future St, Robotics City, NY"
+        address: "123 Future St, Robotics City, NY",
+        emailLabel: "Email",
+        phoneLabel: "Phone"
+      },
+      placeholders: {
+        name: "John Doe",
+        email: "john@example.com",
+        message: "Tell us about your event..."
       }
     },
     footer: {
-      copyright: "© 2026 RoboRent. All rights reserved."
+      description: "Pioneering the future of event entertainment with cutting-edge robotic technology.",
+      links: "Quick Links",
+      social: "Follow Us",
+      copyright: "© 2026 RobotEvent. All rights reserved."
     }
   },
   VN: {
@@ -88,10 +115,23 @@ export const translations = {
       robots: [
         { name: "Aura-X", desc: "Robot hình người cao cấp dành cho việc đón khách VIP và thuyết trình.", price: "35.000.000 VNĐ", duration: "8 tiếng", abilities: ["Đa Ngôn Ngữ", "Nhận Diện Khuôn Mặt", "Tổng Hợp Giọng Nói"] },
         { name: "CyberDog", desc: "Robot bốn chân công nghệ cao cho các buổi trình diễn năng động.", price: "5.000.000 VNĐ", duration: "8 tiếng", abilities: ["Nhanh Nhẹn", "Theo Dõi Vật Thể", "Biểu Diễn Kỹ Năng"] }
-      ]
+      ],
+      modal: {
+        inquiry: "Yêu Cầu Thuê",
+        interest: "Bạn đang quan tâm đến",
+        description: "Liên hệ bộ phận cho thuê của chúng tôi để biết tình trạng sẵn có và các gói dịch vụ tùy chỉnh.",
+        call: "Gọi cho chúng tôi",
+        email: "Email",
+        visit: "Địa chỉ",
+        button: "Liên hệ ngay",
+        availability: "Sẵn sàng Thứ 2 - Thứ 6, 9h sáng - 6h tối"
+      }
     },
     useCases: {
       title: "Hoàn Hảo Cho Mọi Sự Kiện",
+      subtitle: "Ứng Dụng Đa Dạng",
+      cta: "Thảo Luận Về Sự Kiện Của Bạn",
+      statLabel: "Tỷ Lệ Tương Tác",
       items: [
         "Triển Lãm & Hội Chợ Thương Mại",
         "Ra Mắt Sản Phẩm",
@@ -101,26 +141,40 @@ export const translations = {
       ]
     },
     about: {
-      title: "Về RoboRent",
+      title: "Về RobotEvent",
       mission: "Sứ mệnh của chúng tôi là thu hẹp khoảng cách giữa con người và robot tiên tiến. Chúng tôi cung cấp quyền truy cập liền mạch vào công nghệ giải trí hàng đầu, đảm bảo sự kiện của bạn không chỉ được xem mà còn được ghi nhớ.",
       focus: "Tập trung vào sự đổi mới, độ tin cậy và những trải nghiệm khó quên."
     },
     contact: {
       title: "Liên Hệ",
+      connect: "Kết Nối Với Chúng Tôi",
+      tagline: "Sẵn sàng hiện thực hóa tương lai?",
+      description: "Hãy liên hệ với đội ngũ của chúng tôi để thảo luận về yêu cầu sự kiện, nhận báo giá hoặc đặt lịch trải nghiệm các robot tiên tiến.",
       form: {
         name: "Tên Của Bạn",
         email: "Email Của Bạn",
         message: "Tin Nhắn",
-        submit: "Gửi Tin Nhắn"
+        submit: "Gửi Tin Nhắn",
+        success: "Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất."
       },
       info: {
-        email: "hello@roborent.tech",
+        email: "hello@robotevent.tech",
         phone: "+84 987 654 321",
-        address: "123 Đường Tương Lai, TP. Thủ Đức, HCM"
+        address: "123 Đường Tương Lai, TP. Thủ Đức, HCM",
+        emailLabel: "Email",
+        phoneLabel: "Điện thoại"
+      },
+      placeholders: {
+        name: "Nguyễn Văn A",
+        email: "nguyenvana@gmail.com",
+        message: "Hãy chia sẻ về sự kiện của bạn..."
       }
     },
     footer: {
-      copyright: "© 2026 RoboRent. Đã đăng ký bản quyền."
+      description: "Tiên phong trong tương lai của ngành giải trí sự kiện với công nghệ robot tiên tiến.",
+      links: "Liên Kết Nhanh",
+      social: "Theo Dõi Chúng Tôi",
+      copyright: "© 2026 RobotEvent. Đã đăng ký bản quyền."
     }
   }
 };

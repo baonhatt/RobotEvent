@@ -1,11 +1,31 @@
-import { motion } from 'motion/react';
-import { Mail, Phone, Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
 
 interface ContactProps {
   t: any;
 }
 
 export default function Contact({ t }: ContactProps) {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setFormData({ name: '', email: '', message: '' });
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => setIsSuccess(false), 5000);
+  };
+
   return (
     <section id="contact" className="py-24 bg-dark-bg relative border-t border-gray-800 overflow-hidden">
       {/* Decorative Background */}
@@ -30,15 +50,15 @@ export default function Contact({ t }: ContactProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium mb-6 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
-              Connect With Us
+              {t.connect}
             </div>
             
             <h3 className="text-4xl md:text-5xl font-display font-semibold text-white leading-tight tracking-tight">
-              Ready to rent the future?
+              {t.tagline}
             </h3>
             
             <p className="text-gray-400 text-lg font-normal leading-relaxed">
-              Reach out to our team to discuss your event requirements, get a quote, or schedule a demo of our robotic fleet.
+              {t.description}
             </p>
 
             <div className="space-y-6">
@@ -47,7 +67,7 @@ export default function Contact({ t }: ContactProps) {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">Email</p>
+                  <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">{t.info.emailLabel}</p>
                   <a href={`mailto:${t.info.email}`} className="text-xl text-white font-semibold hover:text-electric-blue transition-colors">
                     {t.info.email}
                   </a>
@@ -59,7 +79,7 @@ export default function Contact({ t }: ContactProps) {
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">Phone</p>
+                  <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">{t.info.phoneLabel}</p>
                   <a href={`tel:${t.info.phone}`} className="text-xl text-white font-semibold hover:text-electric-blue transition-colors">
                     {t.info.phone}
                   </a>
@@ -79,50 +99,86 @@ export default function Contact({ t }: ContactProps) {
             {/* Decorative corner */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-electric-blue/10 to-transparent rounded-bl-[150px] -z-10 blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
             
-            <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
-                  {t.form.name}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
-                  placeholder="John Doe"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
-                  {t.form.email}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
-                  placeholder="john@example.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
-                  {t.form.message}
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-none"
-                  placeholder="Tell us about your event..."
-                ></textarea>
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]"
-              >
-                <span className="relative z-10 text-[15px]">{t.form.submit}</span>
-                <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
+            <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
+              <AnimatePresence mode="wait">
+                {isSuccess ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="flex flex-col items-center justify-center py-12 text-center"
+                  >
+                    <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-10 h-10 text-green-500" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-2">{t.form.success}</h4>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
+                        {t.form.name}
+                      </label>
+                      <input
+                        required
+                        type="text"
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        placeholder={t.placeholders.name}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
+                        {t.form.email}
+                      </label>
+                      <input
+                        required
+                        type="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        placeholder={t.placeholders.email}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-gray-400 mb-2 tracking-wide">
+                        {t.form.message}
+                      </label>
+                      <textarea
+                        required
+                        id="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-none"
+                        placeholder={t.placeholders.message}
+                      ></textarea>
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      <span className="relative z-10 text-[15px]">
+                        {isSubmitting ? '...' : t.form.submit}
+                      </span>
+                      {!isSubmitting && <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </form>
           </motion.div>
         </div>
