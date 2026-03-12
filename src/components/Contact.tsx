@@ -13,23 +13,36 @@ export default function Contact({ t }: ContactProps) {
   const [submitError, setSubmitError] = useState('');
 
   const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/$/, '');
-  const contactApiUrl = apiBaseUrl ? `${apiBaseUrl}/api/contact` : '/api/contact';
+  const apiPath = (import.meta.env.VITE_CONTACT_API_PATH || '/contact').trim();
+  const normalizedApiPath = apiPath.startsWith('/') ? apiPath : `/${apiPath}`;
+  const contactApiUrl = `${apiBaseUrl}${normalizedApiPath}`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsSuccess(false);
     setSubmitError('');
 
     try {
       const response = await fetch(contactApiUrl, {
         method: 'POST',
         headers: {
+          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json().catch(() => ({}));
+      const raw = await response.text();
+      const data = raw
+        ? (() => {
+            try {
+              return JSON.parse(raw);
+            } catch {
+              return { error: raw };
+            }
+          })()
+        : {};
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message.');
