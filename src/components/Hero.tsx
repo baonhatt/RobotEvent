@@ -87,7 +87,7 @@ export default function Hero({ t }: HeroProps) {
             >
               <img
                 src={heroImg}
-                alt="Futuristic Humanoid Robot"
+                alt="RobotEvent - Cho thuê Robot sự kiện chuyên nghiệp"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"

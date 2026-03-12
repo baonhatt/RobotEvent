@@ -56,7 +56,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                   <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-transparent to-transparent z-10"></div>
                   <img
                     src={robotImages[index]}
-                    alt={robot.name}
+                    alt={`RobotEvent - ${robot.name}`}
                     loading="lazy"
                     fetchPriority="low"
                     decoding="async"

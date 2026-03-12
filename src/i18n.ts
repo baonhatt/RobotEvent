@@ -7,8 +7,8 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      tagline: "Rent Robots to Make Your Events Unforgettable",
-      description: "Experience the future today. Our advanced humanoid and interactive robots are ready to elevate your exhibitions, product launches, and entertainment shows.",
+      tagline: "RobotEvent - Rent Robots to Make Your Events Unforgettable",
+      description: "Experience the future today. RobotEvent provides advanced humanoid and interactive robots ready to elevate your exhibitions, product launches, and entertainment shows.",
       cta: "Explore Robots",
       contactUs: "Contact Us"
     },
@@ -100,8 +100,8 @@ export const translations = {
       contact: "Liên hệ",
     },
     hero: {
-      tagline: "Thuê Robot Để Sự Kiện Của Bạn Trở Nên Khó Quên",
-      description: "Trải nghiệm tương lai ngay hôm nay. Các robot hình người và tương tác tiên tiến của chúng tôi sẵn sàng nâng tầm các buổi triển lãm, ra mắt sản phẩm và chương trình giải trí của bạn.",
+      tagline: "RobotEvent - Thuê Robot Để Sự Kiện Của Bạn Trở Nên Khó Quên",
+      description: "Trải nghiệm tương lai ngay hôm nay. RobotEvent cung cấp các robot hình người và tương tác tiên tiến sẵn sàng nâng tầm các buổi triển lãm, ra mắt sản phẩm và chương trình giải trí của bạn.",
       cta: "Khám Phá Robot",
       contactUs: "Liên hệ ngay"
     },
@@ -147,7 +147,7 @@ export const translations = {
     },
     about: {
       title: "Về RobotEvent",
-      mission: "Sứ mệnh của chúng tôi là thu hẹp khoảng cách giữa con người và robot tiên tiến. Chúng tôi cung cấp quyền truy cập liền mạch vào công nghệ giải trí hàng đầu, đảm bảo sự kiện của bạn không chỉ được xem mà còn được ghi nhớ.",
+      mission: "Tại RobotEvent, sứ mệnh của chúng tôi là thu hẹp khoảng cách giữa con người và robot tiên tiến. Chúng tôi cung cấp quyền truy cập liền mạch vào công nghệ giải trí hàng đầu, đảm bảo sự kiện của bạn không chỉ được xem mà còn được ghi nhớ.",
       focus: "Tập trung vào sự đổi mới, độ tin cậy và những trải nghiệm khó quên."
     },
     contact: {
