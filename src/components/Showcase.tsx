@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Cpu, Zap, Eye, Shield, Mail, Phone, MapPin, X, ExternalLink } from 'lucide-react';
+import roboHero from '../assets/img/robo-hero.webp';
+import homedogAirPro from '../assets/img/homedog-air-pro.webp';
+
 
 interface ShowcaseProps {
   t: any;
@@ -12,8 +15,8 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
   const [selectedRobot, setSelectedRobot] = useState<any>(null);
 
   const robotImages = [
-    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600&h=800",
-    "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=600&h=800"
+    roboHero,
+    homedogAirPro
   ];
 
   const icons = [Cpu, Zap, Eye, Shield];
@@ -72,13 +75,13 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                     <h3 className="text-2xl font-display font-semibold text-white tracking-tight group-hover:text-electric-blue transition-colors">
                       {robot.name}
                     </h3>
-                    <span className="text-xs text-gray-500 font-medium">{robot.duration}</span>
+                    {/* <span className="text-xs text-gray-500 font-medium">{robot.duration}</span> */}
                   </div>
 
                   {/* Pricing Pill */}
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-electric-blue/10 border border-electric-blue/20 text-electric-blue text-xs font-bold mb-4">
+                  {/* <div className="inline-flex items-center px-3 py-1 rounded-full bg-electric-blue/10 border border-electric-blue/20 text-electric-blue text-xs font-bold mb-4">
                     {robot.price}
-                  </div>
+                  </div> */}
 
                   <p className="text-gray-400 text-sm mb-6 font-normal leading-relaxed line-clamp-2">
                     {robot.desc}

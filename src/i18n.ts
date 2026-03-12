@@ -102,7 +102,7 @@ export const translations = {
     hero: {
       tagline: "Thuê Robot Để Sự Kiện Của Bạn Trở Nên Khó Quên",
       description: "Trải nghiệm tương lai ngay hôm nay. Các robot hình người và tương tác tiên tiến của chúng tôi sẵn sàng nâng tầm các buổi triển lãm, ra mắt sản phẩm và chương trình giải trí của bạn.",
-      cta: "Khám Phá Robot", 
+      cta: "Khám Phá Robot",
       contactUs: "Liên hệ ngay"
     },
     capabilities: {
@@ -118,8 +118,8 @@ export const translations = {
       title: "Gặp Gỡ Robot Của Chúng Tôi",
       viewSpecs: "Xem Chi Tiết",
       robots: [
-        { name: "Aura-X", desc: "Robot hình người cao cấp dành cho việc đón khách VIP và thuyết trình.", price: "35.000.000 VNĐ", duration: "8 tiếng", abilities: ["Đa Ngôn Ngữ", "Nhận Diện Khuôn Mặt", "Tổng Hợp Giọng Nói"] },
-        { name: "CyberDog", desc: "Robot bốn chân công nghệ cao cho các buổi trình diễn năng động.", price: "5.000.000 VNĐ", duration: "8 tiếng", abilities: ["Nhanh Nhẹn", "Theo Dõi Vật Thể", "Biểu Diễn Kỹ Năng"] }
+        { name: "Robot Human", desc: "Robot hình người cao cấp dành cho việc đón khách VIP và thuyết trình.", price: "35.000.000 VNĐ", duration: "8 tiếng", abilities: ["Đa Ngôn Ngữ", "Nhận Diện Khuôn Mặt", "Tổng Hợp Giọng Nói"] },
+        { name: "Robot Dog", desc: "Robot bốn chân công nghệ cao cho các buổi trình diễn năng động.", price: "5.000.000 VNĐ", duration: "8 tiếng", abilities: ["Nhanh Nhẹn", "Theo Dõi Vật Thể", "Biểu Diễn Kỹ Năng"] }
       ],
       modal: {
         inquiry: "Yêu Cầu Thuê",
@@ -174,7 +174,7 @@ export const translations = {
       placeholders: {
         name: "Nguyễn Văn A",
         email: "nguyenvana@gmail.com",
-        phone: "số điện thoại",
+        phone: "Số điện thoại",
         message: "Hãy chia sẻ cho chúng tôi về sự kiện của bạn..."
       }
     },

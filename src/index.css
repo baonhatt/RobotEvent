@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: "Neusharp", "Orbitron", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Be Vietnam Pro", "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Saira", "Neusharp", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
   --color-electric-blue: #00f0ff; /* Bright Cyan from image */
   --color-deep-blue: #0a192f;
@@ -14,6 +14,7 @@ body {
   background-color: var(--color-dark-bg);
   color: #f3f4f6;
   font-family: var(--font-sans);
+  font-weight: 500;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,8 +22,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 /* Glowing text effect from image */

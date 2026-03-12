@@ -1,4 +1,18 @@
-import { Bot, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Bot, Facebook, Twitter, Instagram } from 'lucide-react';
+
+const Tiktok = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 interface FooterProps {
   t: any;
@@ -8,9 +22,7 @@ interface FooterProps {
 export default function Footer({ t, nav }: FooterProps) {
   const socialLinks = [
     { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Linkedin, href: "#" },
+    { icon: Tiktok, href: "#" },
   ];
 
   const navLinks = [
@@ -46,7 +58,7 @@ export default function Footer({ t, nav }: FooterProps) {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-electric-blue transition-colors uppercase tracking-widest text-sm font-medium"
+                    className="text-gray-400 hover:text-electric-blue transition-colors uppercase tracking-widest text-sm font-sans font-medium"
                   >
                     {link.name}
                   </a>

@@ -47,7 +47,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
             <a
               key={link.name}
               href={link.href}
-              className="text-[13px] font-medium text-gray-400 hover:text-white transition-colors tracking-wide"
+              className="text-[13px] font-sans font-medium text-gray-400 hover:text-white transition-colors tracking-wide"
             >
               {link.name}
             </a>
@@ -56,14 +56,14 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
           <div className="flex items-center bg-white/5 backdrop-blur-lg rounded-full p-1 border border-white/10">
             <button
               onClick={() => setLang('EN')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${lang === 'EN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
+              className={`px-4 py-1.5 rounded-full text-xs font-sans font-semibold transition-all duration-300 ${lang === 'EN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
                 }`}
             >
               EN
             </button>
             <button
               onClick={() => setLang('VN')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ${lang === 'VN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
+              className={`px-4 py-1.5 rounded-full text-xs font-sans font-semibold transition-all duration-300 ${lang === 'VN' ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:text-white'
                 }`}
             >
               VN
@@ -94,7 +94,7 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-gray-300 hover:text-electric-blue transition-colors uppercase tracking-widest block py-2"
+                className="text-lg font-sans font-medium text-gray-300 hover:text-electric-blue transition-colors uppercase tracking-widest block py-2"
               >
                 {link.name}
               </a>
@@ -102,14 +102,14 @@ export default function Header({ lang, setLang, t }: HeaderProps) {
             <div className="flex items-center gap-2 pt-4 border-t border-gray-800">
               <button
                 onClick={() => { setLang('EN'); setMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${lang === 'EN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
+                className={`flex-1 py-2 rounded-md text-sm font-sans font-bold transition-all ${lang === 'EN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
                   }`}
               >
                 ENGLISH
               </button>
               <button
                 onClick={() => { setLang('VN'); setMobileMenuOpen(false); }}
-                className={`flex-1 py-2 rounded-md text-sm font-bold transition-all ${lang === 'VN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
+                className={`flex-1 py-2 rounded-md text-sm font-sans font-bold transition-all ${lang === 'VN' ? 'bg-electric-blue text-dark-bg' : 'bg-card-bg text-gray-400'
                   }`}
               >
                 TIẾNG VIỆT
