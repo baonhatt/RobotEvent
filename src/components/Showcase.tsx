@@ -28,9 +28,8 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
 
   return (
     <section id="robots" className="py-24 bg-card-bg relative overflow-hidden">
-      {/* Decorative Background – hidden on mobile to skip 1920px image fetch */}
-      <div className="absolute top-0 left-0 w-full h-full hidden sm:block bg-[url('https://picsum.photos/seed/circuit/1280/720?blur=10')] opacity-5 mix-blend-overlay pointer-events-none"></div>
-
+      {/* Decorative Background */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://picsum.photos/seed/circuit/1920/1080?blur=10')] opacity-5 mix-blend-overlay pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-white mb-6 tracking-tight glow-text">
