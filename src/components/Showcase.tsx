@@ -161,7 +161,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.call}</p>
-                      <p className="text-xl font-semibold text-white">{contactT.info.phone}</p>
+                      <p className="text-xm text-sm sm:text-base font-semibold text-white">{contactT.info.phone}</p>
                     </div>
                   </div>
 
@@ -171,7 +171,9 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.email}</p>
-                      <p className="text-xm font-semibold text-white">{contactT.info.email}</p>
+                        <p className="text-sm sm:text-base font-semibold text-white break-all">
+                        {contactT.info.email}
+                        </p>
                     </div>
                   </div>
 
@@ -193,7 +195,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                   >
                     {t.modal.button}
                   </a>
-                  <p className="text-center text-xs text-gray-600">{t.modal.availability}</p>
+                  {/* <p className="text-center text-xs text-gray-600">{t.modal.availability}</p> */}
                 </div>
               </div>
             </motion.div>
