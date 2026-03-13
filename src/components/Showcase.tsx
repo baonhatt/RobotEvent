@@ -116,12 +116,12 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
         {isPopupOpen && (
           <div
             className="fixed inset-0 z-100 flex items-center justify-center p-4"
-            onPointerDown={() => setIsPopupOpen(false)}
           >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setIsPopupOpen(false)}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             />
 
@@ -129,7 +129,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-lg bg-dark-bg border border-white/10 rounded-[40px] shadow-[0_0_50px_rgba(0,240,255,0.1)] overflow-hidden"
             >
               {/* Decorative elements */}

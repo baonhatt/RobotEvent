@@ -56,7 +56,7 @@ html {
 /* ─── Mobile performance ─────────────────────────────────────────────────── */
 
 /* Skip off-screen rendering for below-fold sections */
-section:not(#home) {
+section:not(#home):not(#robots) {
   content-visibility: auto;
   contain-intrinsic-size: auto 600px;
 }
