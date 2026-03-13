@@ -74,7 +74,7 @@ export const translations = {
       info: {
         email: "yuxintechnologyvietnam@gmail.com",
         phone: "0766620866",
-        address: "123 Future St, Robotics City, NY",
+        address: "Loading",
         emailLabel: "Email",
         phoneLabel: "Phone"
       },
@@ -167,7 +167,7 @@ export const translations = {
       info: {
         email: "yuxintechnologyvietnam@gmail.com",
         phone: "0766620866",
-        address: "123 Đường Tương Lai, TP. Thủ Đức, HCM",
+        address: "Đang cập nhật",
         emailLabel: "Email",
         phoneLabel: "Điện thoại"
       },

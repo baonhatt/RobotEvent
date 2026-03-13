@@ -48,7 +48,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full flex flex-col h-full"
+                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full max-w-85 justify-self-center flex flex-col h-full"
               >
                 {/* Image Container */}
                 <div className="relative h-80 overflow-hidden">
@@ -171,7 +171,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 font-medium mb-1 uppercase tracking-widest">{t.modal.email}</p>
-                      <p className="text-xl font-semibold text-white">{contactT.info.email}</p>
+                      <p className="text-xm font-semibold text-white">{contactT.info.email}</p>
                     </div>
                   </div>
 
