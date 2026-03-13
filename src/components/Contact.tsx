@@ -61,60 +61,60 @@ export default function Contact({ t }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="py-24 bg-dark-bg relative border-t border-gray-800 overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-dark-bg relative border-t border-gray-800 overflow-hidden">
       {/* Decorative Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-electric-blue/5 to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-electric-blue/5 to-transparent pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-white mb-6 tracking-tight">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-white mb-5 sm:mb-6 tracking-tight">
             {t.title}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-electric-blue to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-electric-blue to-purple-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="space-y-12"
+            className="space-y-8 sm:space-y-10 lg:space-y-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium mb-6 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs sm:text-sm font-medium mb-4 sm:mb-6 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
               {t.connect}
             </div>
             
-            <h3 className="text-4xl md:text-5xl font-display font-semibold text-white leading-tight tracking-tight">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-white leading-tight tracking-tight">
               {t.tagline}
             </h3>
             
-            <p className="text-gray-400 text-lg font-normal leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg font-normal leading-relaxed">
               {t.description}
             </p>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-6 group p-4 rounded-[24px] bg-[#1c1c1e] border border-white/5 hover:border-white/20 transition-all duration-300">
-                <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-[18px] flex items-center justify-center group-hover:bg-white/10 transition-colors shadow-inner backdrop-blur-sm">
-                  <Mail className="w-8 h-8 text-white" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start sm:items-center gap-4 sm:gap-6 group p-4 sm:p-5 rounded-3xl bg-[#1c1c1e] border border-white/5 hover:border-white/20 transition-all duration-300">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-white/5 border border-white/10 rounded-[18px] flex items-center justify-center group-hover:bg-white/10 transition-colors shadow-inner backdrop-blur-sm">
+                  <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">{t.info.emailLabel}</p>
-                  <a href={`mailto:${t.info.email}`} className="text-xl text-white font-semibold hover:text-electric-blue transition-colors">
+                  <a href={`mailto:${t.info.email}`} className="block text-base sm:text-xl text-white font-semibold hover:text-electric-blue transition-colors break-all">
                     {t.info.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group p-4 rounded-[24px] bg-[#1c1c1e] border border-white/5 hover:border-white/20 transition-all duration-300">
-                <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-[18px] flex items-center justify-center group-hover:bg-white/10 transition-colors shadow-inner backdrop-blur-sm">
-                  <Phone className="w-8 h-8 text-white" />
+              <div className="flex items-start sm:items-center gap-4 sm:gap-6 group p-4 sm:p-5 rounded-3xl bg-[#1c1c1e] border border-white/5 hover:border-white/20 transition-all duration-300">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-white/5 border border-white/10 rounded-[18px] flex items-center justify-center group-hover:bg-white/10 transition-colors shadow-inner backdrop-blur-sm">
+                  <Phone className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400 font-medium mb-1 tracking-wide">{t.info.phoneLabel}</p>
-                  <a href={`tel:${t.info.phone}`} className="text-xl text-white font-semibold hover:text-electric-blue transition-colors">
+                  <a href={`tel:${t.info.phone}`} className="block text-lg sm:text-xl text-white font-semibold hover:text-electric-blue transition-colors wrap-break-word">
                     {t.info.phone}
                   </a>
                 </div>
@@ -128,12 +128,12 @@ export default function Contact({ t }: ContactProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-[#1c1c1e] p-8 md:p-12 rounded-[32px] border border-white/5 shadow-2xl relative overflow-hidden group"
+            className="bg-[#1c1c1e] p-5 sm:p-8 md:p-12 rounded-3xl sm:rounded-4xl border border-white/5 shadow-2xl relative overflow-hidden group"
           >
             {/* Decorative corner */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-electric-blue/10 to-transparent rounded-bl-[150px] -z-10 blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-electric-blue/10 to-transparent rounded-bl-[150px] -z-10 blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
             
-            <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
+            <form className="space-y-5 sm:space-y-6 relative z-10" onSubmit={handleSubmit}>
               <AnimatePresence mode="wait">
                 {isSuccess ? (
                   <motion.div
@@ -141,12 +141,12 @@ export default function Contact({ t }: ContactProps) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="flex flex-col items-center justify-center py-12 text-center"
+                    className="flex flex-col items-center justify-center py-10 sm:py-12 text-center"
                   >
                     <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
                       <CheckCircle2 className="w-10 h-10 text-green-500" />
                     </div>
-                    <h4 className="text-2xl font-bold text-white mb-2">{t.form.success}</h4>
+                    <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">{t.form.success}</h4>
                   </motion.div>
                 ) : (
                   <motion.div
@@ -165,7 +165,7 @@ export default function Contact({ t }: ContactProps) {
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-white text-sm sm:text-base focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
                         placeholder={t.placeholders.name}
                       />
                     </div>
@@ -180,7 +180,7 @@ export default function Contact({ t }: ContactProps) {
                         id="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-white text-sm sm:text-base focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
                         placeholder={t.placeholders.phone}
                       />
                     </div>
@@ -195,7 +195,7 @@ export default function Contact({ t }: ContactProps) {
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-white text-sm sm:text-base focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300"
                         placeholder={t.placeholders.email}
                       />
                     </div>
@@ -210,7 +210,7 @@ export default function Contact({ t }: ContactProps) {
                         rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-[16px] px-5 py-4 text-white focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-y"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-white text-sm sm:text-base focus:outline-none focus:border-white/30 focus:bg-white/10 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-y"
                         placeholder={t.placeholders.message}
                       ></textarea>
                     </div>
@@ -218,9 +218,9 @@ export default function Contact({ t }: ContactProps) {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      <span className="relative z-10 text-[15px]">
+                      <span className="relative z-10 text-sm sm:text-[15px]">
                         {isSubmitting ? (t.form.sending || 'Sending...') : t.form.submit}
                       </span>
                       {!isSubmitting && <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
