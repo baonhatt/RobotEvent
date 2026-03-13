@@ -38,7 +38,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
           <div className="w-24 h-1 bg-electric-blue mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.4)]"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           {t.robots.map((robot: any, index: number) => {
             const Icon = icons[index % icons.length];
             return (
@@ -48,7 +48,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full max-w-85 justify-self-center flex flex-col h-full"
+                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full flex flex-col h-full"
               >
                 {/* Image Container */}
                 <div className="relative h-80 overflow-hidden">
