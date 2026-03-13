@@ -25,8 +25,8 @@ export const translations = {
       title: "Meet Our Robots",
       viewSpecs: "View Specs",
       robots: [
-        { name: "Aura-X", desc: "Premium humanoid for VIP hosting and presentations.", price: "35,000,000 VND", duration: "8 hours", abilities: ["Multilingual", "Facial Recognition", "Speech Synthesis"] },
-        { name: "CyberDog", desc: "High-tech quadruped robot for dynamic demonstrations.", price: "5,000,000 VND", duration: "8 hours", abilities: ["Agility", "Object Tracking", "Stunts"] }
+        { name: "Robot Human", desc: "Premium humanoid robot for stage performances and event hosting.", price: "35,000,000 VND", duration: "8 hours", abilities: ["Dance performances to music", "Interact with the audience", "Welcome guests and create check-in highlights", "Ideal for stages, event lobbies, and conference centers", "Attract guests to record videos", "Create strong media buzz"] },
+        { name: "Robot Dog", desc: "High-tech quadruped robot for dynamic activations and showcases.", price: "5,000,000 VND", duration: "8 hours", abilities: ["Company, store, and center grand openings", "Tech company events", "Research activities and exhibitions at universities", "Ribbon-cutting ceremonies", "Year-end parties and corporate events", "Birthdays, weddings, and special parties"] }
       ],
       modal: {
         inquiry: "Rental Inquiry",
@@ -72,8 +72,8 @@ export const translations = {
         success: "Message sent! We'll get back to you soon."
       },
       info: {
-        email: "hello@robotevent.tech",
-        phone: "+1 (555) 123-4567",
+        email: "yuxintechnologyvietnam@gmail.com",
+        phone: "0766620866",
         address: "123 Future St, Robotics City, NY",
         emailLabel: "Email",
         phoneLabel: "Phone"
@@ -118,8 +118,8 @@ export const translations = {
       title: "Gặp Gỡ Robot Của Chúng Tôi",
       viewSpecs: "Xem Chi Tiết",
       robots: [
-        { name: "Robot Human", desc: "Robot hình người cao cấp dành cho việc đón khách VIP và thuyết trình.", price: "35.000.000 VNĐ", duration: "8 tiếng", abilities: ["Đa Ngôn Ngữ", "Nhận Diện Khuôn Mặt", "Tổng Hợp Giọng Nói"] },
-        { name: "Robot Dog", desc: "Robot bốn chân công nghệ cao cho các buổi trình diễn năng động.", price: "5.000.000 VNĐ", duration: "8 tiếng", abilities: ["Nhanh Nhẹn", "Theo Dõi Vật Thể", "Biểu Diễn Kỹ Năng"] }
+        { name: "Robot Human", desc: "Robot hình người cao cấp cho biểu diễn sân khấu và hoạt náo sự kiện.", price: "35.000.000 VNĐ", duration: "8 tiếng", abilities: ["Biểu diễn nhảy theo nhạc", "Tương tác với khán giả", "Chào khách, tạo điểm check-in", "Phù hợp cho sân khấu, sảnh sự kiện, trung tâm hội nghị", "Thu hút khách quay video", "Tạo hiệu ứng truyền thông"] },
+        { name: "Robot Dog", desc: "Robot bốn chân công nghệ cao cho các hoạt động trình diễn và thu hút đám đông.", price: "5.000.000 VNĐ", duration: "8 tiếng", abilities: ["Khai trương công ty, cửa hàng, trung tâm", "Sự kiện các công ty công nghệ", "Hoạt động nghiên cứu, triển lãm tại trường đại học", "Lễ cắt băng khai trương", "Tiệc tất niên, sự kiện doanh nghiệp", "Sinh nhật, tiệc cưới và các buổi tiệc đặc biệt"] }
       ],
       modal: {
         inquiry: "Yêu Cầu Thuê",
@@ -165,8 +165,8 @@ export const translations = {
         success: "Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất."
       },
       info: {
-        email: "hello@robotevent.tech",
-        phone: "+84 987 654 321",
+        email: "yuxintechnologyvietnam@gmail.com",
+        phone: "0766620866",
         address: "123 Đường Tương Lai, TP. Thủ Đức, HCM",
         emailLabel: "Email",
         phoneLabel: "Điện thoại"

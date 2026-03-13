@@ -38,7 +38,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
           <div className="w-24 h-1 bg-electric-blue mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.4)]"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {t.robots.map((robot: any, index: number) => {
             const Icon = icons[index % icons.length];
             return (
@@ -48,7 +48,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-85"
+                className="group relative bg-[#1c1c1e] rounded-4xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 shadow-2xl w-full max-w-85 justify-self-center flex flex-col h-full"
               >
                 {/* Image Container */}
                 <div className="relative h-80 overflow-hidden">
@@ -69,7 +69,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 relative z-20 -mt-10 bg-linear-to-t from-deep-blue via-deep-blue to-transparent pt-12">
+                <div className="p-8 relative z-20 -mt-10 bg-linear-to-t from-deep-blue via-deep-blue to-transparent pt-12 flex flex-col grow">
                   <div className="flex items-baseline justify-between mb-3">
                     <h3 className="text-2xl font-display font-semibold text-white tracking-tight group-hover:text-electric-blue transition-colors">
                       {robot.name}
@@ -87,7 +87,7 @@ export default function Showcase({ t, contactT }: ShowcaseProps) {
                   </p>
 
                   {/* Abilities */}
-                  <div className="space-y-3">
+                  <div className="space-y-3 grow">
                     {robot.abilities.map((ability: string, i: number) => (
                       <div key={i} className="flex items-center gap-3 text-sm font-medium text-gray-300">
                         <div className="w-1.5 h-1.5 bg-electric-blue rounded-full shadow-[0_0_5px_#00f0ff]"></div>
