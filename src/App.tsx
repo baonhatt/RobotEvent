@@ -22,7 +22,7 @@ function SectionFallback() {
 }
 
 export default function App() {
-  df
+
   const [lang, setLang] = useState<Language>('VN');
   const [loadSecondaryContent, setLoadSecondaryContent] = useState(false);
   const t = translations[lang];
