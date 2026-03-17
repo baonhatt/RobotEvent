@@ -72,8 +72,8 @@ export const translations = {
         success: "Message sent! We'll get back to you soon."
       },
       info: {
-        email: "yuxintechnologyvietnam@gmail.com",
-        phone: "0766620866",
+        email: "cinesphere0629@gmail.com",
+        phone: "0914475148",
         address: "Loading",
         emailLabel: "Email",
         phoneLabel: "Phone"
