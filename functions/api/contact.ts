@@ -93,7 +93,7 @@ export async function onRequestPost(context: any) {
           <tr>
             <td style="background-color: #f8f9fa; padding: 30px; text-align: center; font-size: 14px; color: #718096; border-top: 1px solid #e2e8f0;">
               <p style="margin: 0 0 8px;">
-                © ${new Date().getFullYear()} RobotEvent.vn - Dịch vụ cho thuê robot sự kiện & công nghiệp
+                © ${new Date().getFullYear()} RobotEvent.one - Dịch vụ cho thuê robot sự kiện & công nghiệp
               </p>
               <p style="margin: 0;">
                 Email này được gửi tự động từ hệ thống liên hệ website.

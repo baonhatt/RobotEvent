@@ -165,8 +165,8 @@ export const translations = {
         success: "Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất."
       },
       info: {
-        email: "yuxintechnologyvietnam@gmail.com",
-        phone: "0766620866",
+        email: "cinesphere0629@gmail.com",
+        phone: "0914475148",
         address: "Đang cập nhật",
         emailLabel: "Email",
         phoneLabel: "Điện thoại"
